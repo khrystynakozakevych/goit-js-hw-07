@@ -12,7 +12,7 @@ const destroyBtn = controls.querySelector("button[data-destroy]");
 const boxes = document.querySelector("#boxes");
 
 // Creating the boxes
-function createBoxes(amount) {
+const createBoxes = (amount) => {
   // Destroing previous content
   destroyBoxes();
 
@@ -33,15 +33,15 @@ function createBoxes(amount) {
 
   // Adding elements to DOM
   boxes.append(...elements);
-}
+};
 
 // Destroing boxes funzion
-function destroyBoxes() {
+const destroyBoxes = () => {
   boxes.innerHTML = "";
-}
+};
 
 // Adding event listeners
-createBtn.addEventListener("click", () => {
+const handleClick = () => {
   const amount = parseInt(input.value);
 
   if (amount >= 1 && amount <= 100) {
@@ -49,6 +49,7 @@ createBtn.addEventListener("click", () => {
   }
 
   input.value = ""; // clering the input field
-});
+};
+createBtn.addEventListener("click", handleClick);
 
 destroyBtn.addEventListener("click", destroyBoxes);

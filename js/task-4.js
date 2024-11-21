@@ -1,7 +1,7 @@
 "use strict";
 const loginForm = document.querySelector(".login-form");
 
-loginForm.addEventListener("submit", (event) => {
+const handleClick = (event) => {
   event.preventDefault(); // Preventing default reload
 
   const {
@@ -27,4 +27,6 @@ loginForm.addEventListener("submit", (event) => {
   event.target.reset(); // Clearing the form fields after submit
 
   console.log(formData);
-});
+};
+
+loginForm.addEventListener("submit", handleClick);
